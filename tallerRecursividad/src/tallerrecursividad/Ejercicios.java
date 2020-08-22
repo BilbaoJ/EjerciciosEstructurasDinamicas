@@ -34,7 +34,7 @@ public class Ejercicios {
   
     public boolean determinarSiExiste(int[] a, int d, int i){
         //recorrer recursivamente el arreglo      
-        if(i == 0){
+        if(i < 0){
             return false;
         }else if(a[i] == d){
             return true;
