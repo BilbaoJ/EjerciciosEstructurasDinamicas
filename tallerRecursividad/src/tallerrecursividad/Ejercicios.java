@@ -14,7 +14,7 @@ public class Ejercicios {
     public void tribonacciPrincipal(int n) {
         
         for(int i = 0; i < n; i++){
-            System.out.print(tribonacci(i));
+            System.out.print(tribonacci(i) + " ");
         }
     }
       
