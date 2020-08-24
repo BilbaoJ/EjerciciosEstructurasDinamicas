@@ -18,13 +18,16 @@ public class TallerRecursividad {
         
         
         Ejercicios r = new Ejercicios();
-        r.tribonacciPrincipal(11);
+        System.out.println(r.tribonacciPrincipal(11,0));
         int[] datos = new int[]{1,5,2,5,8,2,9};
         int t = datos.length - 1;
         System.out.println(" ");
         System.out.println(r.determinarSiExiste(datos,1,t));
-        System.out.println(r.verificarPalindromo("aa"));
-        System.out.println(r.numerologia(29857));
+        System.out.println(r.verificarPalindromo("awsrtrtgr"));
+        System.out.println(r.numerologia(4864521));
+        String x = "4864521";
+        int tam = x.length(); 
+        System.out.println(r.numerologia2(x, tam));
     }
     
 }

@@ -11,14 +11,18 @@ package tallerrecursividad;
  */
 public class Ejercicios {
     
-    public void tribonacciPrincipal(int n) {
+    public String tribonacciPrincipal(int n, int i) {
         
-        for(int i = 0; i < n; i++){
+        if(i < n){
             System.out.print(tribonacci(i) + " ");
+            i++;
+            return tribonacciPrincipal(n, i);
+        }else{
+            return "";
         }
     }
       
-    public int tribonacci(int n){
+    private int tribonacci(int n){
         if (n == 0) {  
             return 0;
         } else if (n == 1) {
@@ -33,7 +37,7 @@ public class Ejercicios {
     
   
     public boolean determinarSiExiste(int[] a, int d, int i){
-        //recorrer recursivamente el arreglo      
+        
         if(i < 0){
             return false;
         }else if(a[i] == d){
@@ -67,6 +71,39 @@ public class Ejercicios {
             return n;
         }else{
             return n%10 + numerologia(n/10);
+        }
+    }
+    
+    
+    int  b;
+    int a;
+    char otro;
+    int resultado;
+    String c; 
+    
+    public String numerologia2(String n, int t){
+        
+        resultado = numerologia3(Integer.parseInt(n), n, t);
+        c = String.valueOf(resultado);
+        if(c.length() == 1){
+            return c;
+        }else{
+            return numerologia2(c, c.length());
+        }     
+    }
+    
+    
+    private int numerologia3(int n, String num, int b){
+       
+        if (b == 1){
+            return n;
+        }else{
+            otro = num.charAt(0);
+            a = Character.getNumericValue(otro);
+            num = num.substring(1);
+            b = num.length();
+            n = Integer.parseInt(num);
+            return a + numerologia3(n, num, b);
         }
     }
 }
