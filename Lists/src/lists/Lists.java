@@ -71,13 +71,14 @@ public class Lists {
         System.out.println("");
         
         CircularDoubleLinkedList<Integer> miListaCD = new CircularDoubleLinkedList<>();
-        miListaCD.add(11);
-        miListaCD.add(22);
-        miListaCD.add(15);
-        miListaCD.add(33);
-        miListaCD.add(27);
-        miListaCD.add(88);
-        System.out.println("Datos de la lista circular doble: " + miListaCD.showData());
+        miListaCD.addOrdered(11);
+        miListaCD.addOrdered(22);
+        miListaCD.addOrdered(22);
+        miListaCD.addOrdered(15);
+        miListaCD.addOrdered(33);
+        miListaCD.addOrdered(27);
+        miListaCD.addOrdered(88);
+        System.out.println("Datos de la lista circular doble ordenadamente: " + miListaCD.showData());
         miListaCD.deleteLast();
         miListaCD.delete();
         System.out.println("Datos de la lista circular doble después de borrar "
