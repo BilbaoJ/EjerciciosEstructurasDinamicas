@@ -138,10 +138,13 @@ public class SingleLinkedList<T extends Number & Comparable> implements Ilist<T>
             sum -= head.getData().intValue();
 
             //verificar si el dato eliminado es el mínimo o máximo: actualizar(recorrer estructura)
-            if (head.getData().intValue() == maj || head.getData().intValue() == min) {
+            if (head.getData().intValue() == maj) {
                 maj = 0;
+                maj = getMaj();  
+            }
+            
+            if(head.getData().intValue() == min){
                 min = Integer.MAX_VALUE;
-                maj = getMaj();
                 min = getMin();
             }
             //apuntar la cabeza al segundo dato
@@ -166,10 +169,13 @@ public class SingleLinkedList<T extends Number & Comparable> implements Ilist<T>
             sum -= node.getData().intValue();
             previousNode.setNextNode(null);
             
-            if (node.getData().intValue() == maj || node.getData().intValue() == min) {
+            if (node.getData().intValue() == maj) {
                 maj = 0;
+                maj = getMaj(); 
+            }
+            
+            if(node.getData().intValue() == min){
                 min = Integer.MAX_VALUE;
-                maj = getMaj();
                 min = getMin();
             }
             size--;
