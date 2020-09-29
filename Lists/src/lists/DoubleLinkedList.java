@@ -23,21 +23,50 @@ public class DoubleLinkedList<T extends Number & Comparable> implements Ilist<T>
     public boolean isEmpty() {
         return head == null;
     }
+
     /**
      * Determinar si un dato ingresado por el usuario existe en la lista.
+     *
      * @param d Dato a buscar
      * @return Verdadero si lo encuentra
      */
-    public boolean exist(T d){
+    public boolean exist(T d) {
         //recorrer la estructura
         DoubleNode<T> node = head;
-        while(node.getNextNode() != null){
-            if(node.getData() == d){
+        while (node.getNextNode() != null) {
+            if (node.getData() == d) {
                 return true;
             }
             node = node.getNextNode();
         }
-        return node.getData() == d;    
+        return node.getData() == d;
+    }
+
+    public boolean eliminarDatosDuplicados() {
+
+        if (isEmpty()) {
+            System.out.println("Lista vacia");
+        } else {
+            DoubleNode<T> current = head;
+            while(current != null){
+                DoubleNode<T> next = current.getNextNode();
+                while(next != null){
+                    if(current.getData() == next.getData()){
+                        if(next == tail){
+                            tail = tail.getPreviousNode();
+                            tail.setNextNode(null);   
+                        }else{
+                           next.getPreviousNode().setNextNode(next.getNextNode());
+                           next.getNextNode().setPreviousNode(next.getPreviousNode());
+                        }
+                    }
+                    next = next.getNextNode();
+                }
+                current = current.getNextNode();
+            }
+        }
+
+        return false;
     }
 
     @Override
@@ -99,7 +128,7 @@ public class DoubleLinkedList<T extends Number & Comparable> implements Ilist<T>
             head.getNextNode().setPreviousNode(null);
             head = head.getNextNode();
         }
-        
+
     }
 
     @Override

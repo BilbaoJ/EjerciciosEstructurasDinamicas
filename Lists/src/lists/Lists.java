@@ -15,7 +15,7 @@ public class Lists {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        /*
         SingleLinkedList<Integer> miListaS = new SingleLinkedList<>();
         miListaS.addLast(11);
         miListaS.addLast(33);
@@ -30,9 +30,9 @@ public class Lists {
         System.out.println("Datos de la lista simple " + miListaS.showData());
         System.out.println("El promedio es: " + miListaS.getAverage());
         System.out.println("El número menor de la lista es: " + miListaS.getMin());
-        System.out.println("El número mayor de la lista es: " +miListaS.getMaj());
+        System.out.println("El número mayor de la lista es: " + miListaS.getMaj());
         System.out.println();
-        
+
         //pruebas de lista enlazada doble
         DoubleLinkedList<Integer> miListaD = new DoubleLinkedList<>();
         miListaD.addOrdered(1);
@@ -50,13 +50,13 @@ public class Lists {
                 + " el primer dato: "
                 + miListaD.showData());
         System.out.println();
-        
+
         CircularSingleLinkedList<Integer> circular1 = new CircularSingleLinkedList<>();
         circular1.addLast(55);
         circular1.addLast(27);
         circular1.addLast(15);
         circular1.addLast(12);
-        System.out.println("Lista 1: "+ circular1.showData());
+        System.out.println("Lista 1: " + circular1.showData());
         circular1.deleteLast();
         System.out.println("Lista 1 después de borrar el último dato: "
                 + circular1.showData());
@@ -64,12 +64,12 @@ public class Lists {
         circular2.add(33);
         circular2.add(44);
         circular2.add(88);
-        System.out.println("Lista 2: "+ circular2.showData());
+        System.out.println("Lista 2: " + circular2.showData());
         //prueba de unir listas
         circular1.joinList(circular2);
-        System.out.println("Listas unidas: "+ circular1.showData());
+        System.out.println("Listas unidas: " + circular1.showData());
         System.out.println("");
-        
+
         CircularDoubleLinkedList<Integer> miListaCD = new CircularDoubleLinkedList<>();
         miListaCD.addOrdered(11);
         miListaCD.addOrdered(22);
@@ -86,5 +86,21 @@ public class Lists {
         //miListaCD.deleteLast();
         System.out.println("Datos de la lista circular doble descendente: " + miListaCD.showDataDesc());
         System.out.println("");
+        */
+
+        DoubleLinkedList<Integer> miListaD2 = new DoubleLinkedList<>();
+        miListaD2.add(1);
+        miListaD2.add(2);
+        miListaD2.add(3);
+        miListaD2.add(7);
+        miListaD2.add(8);
+        miListaD2.addLast(1);
+        miListaD2.addLast(2);
+        miListaD2.addLast(3);
+        System.out.println("Datos de la lista enlazada doble: "
+                + miListaD2.showData());
+        miListaD2.eliminarDatosDuplicados();
+        System.out.println("Datos de la lista enlazada doble: "
+                + miListaD2.showData());
     }
 }
